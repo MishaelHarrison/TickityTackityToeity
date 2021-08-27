@@ -1,0 +1,12 @@
+<div>
+    <span *ngFor='let item of grid; index as i'>
+        <square
+            id='{{i}}'
+            display='{{item}}'
+            (click)='play(i)'
+            [glow]='isWin && winners.includes(i)'
+            [blue]='isDraw'
+        ></square>
+        <br *ngIf='i%3 == 2'>
+    </span>
+</div>
