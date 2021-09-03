@@ -1,6 +1,82 @@
-.box {
-    height: 100px;
-    width: 100px;
-    border: 1px solid black;
-    font-size: 70px;
+button {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  font-size: 70px;
+}
+
+.none {
+  background-color: lightgray;
+}
+
+.X {
+  background-color: red;
+}
+
+.O {
+  background-color: green;
+}
+
+.tieX {
+  background-color: red;
+  animation: tieX 1s infinite;
+}
+
+@keyframes tieX {
+  20%,
+  50% {
+    background-color: blue;
+  }
+  70%,
+  100% {
+    background-color: red;
+  }
+}
+
+.tieO {
+  background-color: green;
+  animation: tieO 1s infinite;
+}
+
+@keyframes tieO {
+  20%,
+  50% {
+    background-color: blue;
+  }
+  70%,
+  100% {
+    background-color: green;
+  }
+}
+
+.glowX {
+  background-color: red;
+  animation: glowX 1s infinite;
+}
+
+@keyframes glowX {
+  20%,
+  50% {
+    background-color: gold;
+  }
+  70%,
+  100% {
+    background-color: red;
+  }
+}
+
+.glowO {
+  background-color: green;
+  animation: glowO 1s infinite;
+}
+
+@keyframes glowO {
+  20%,
+  50% {
+    background-color: gold;
+  }
+  70%,
+  100% {
+    background-color: green;
+  }
 }

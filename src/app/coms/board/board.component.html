@@ -1,12 +1,28 @@
+<button
+  (click)="isRobot = true"
+  [style.background-color]="isRobot ? 'green' : 'lightgrey'"
+>
+  robot
+</button>
+&nbsp;
+<button
+  (click)="isRobot = false"
+  [style.background-color]="!isRobot ? 'green' : 'lightgrey'"
+>
+  human
+</button>
+<br />
+<br />
+
 <div>
-    <span *ngFor='let item of grid; index as i'>
-        <square
-            id='{{i}}'
-            display='{{item}}'
-            (click)='play(i)'
-            [glow]='isWin && winners.includes(i)'
-            [blue]='isDraw'
-        ></square>
-        <br *ngIf='i%3 == 2'>
-    </span>
+  <span *ngFor="let item of grid; index as i">
+    <square
+      id="{{ i }}"
+      display="{{ item }}"
+      (click)="play(i)"
+      [glow]="isWin && winners.includes(i)"
+      [blue]="isDraw"
+    ></square>
+    <br *ngIf="i % 3 == 2" />
+  </span>
 </div>

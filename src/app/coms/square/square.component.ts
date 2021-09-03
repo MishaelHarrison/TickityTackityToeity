@@ -3,24 +3,22 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'square',
   templateUrl: './square.component.html',
-  styleUrls: ['./square.component.css']
+  styleUrls: ['./square.component.css'],
 })
 export class SquareComponent {
-
   @Input() display: String = '&nbsp;';
   @Input() glow: boolean = false;
   @Input() blue: boolean = false;
 
-  ngOnChanges(){
-    if(this.display === ' ') this.display = '&nbsp;';
+  ngOnChanges() {
+    if (this.display === ' ') this.display = '&nbsp;';
   }
 
-  color(): String{
-    if(this.blue) return 'blue';
-    if(this.glow) return 'yellow';
-    if(this.display === 'X') return 'red';
-    if(this.display === 'O') return 'green';
-    return 'lightgrey';
+  class(): String {
+    if (this.blue) return 'tie' + this.display;
+    if (this.glow) return 'glow' + this.display;
+    if (this.display === 'X') return 'X';
+    if (this.display === 'O') return 'O';
+    return 'none';
   }
-
 }
